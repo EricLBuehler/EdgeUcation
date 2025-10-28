@@ -1,0 +1,15 @@
+[package]
+name = "ios_bridge"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]  # important for Xcode linking
+
+[dependencies]
+anyhow = "1.0.100"
+image = "0.25.8"
+mistralrs = { git = "https://github.com/EricLBuehler/mistral.rs.git", version = "0.6.0", features = ["metal"] }
+reqwest = "0.12.23"
+tokio = "1.47.1"
+url = "2.5.7"
