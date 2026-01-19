@@ -1,17 +1,27 @@
 # Edge(u)cation: Cutting-edge multimodal LLMs on the edge with mistral.rs, using F8Q8.
 
 ## Structure
+
+### iOS
 - `ios_bridge`: Rust and C++ code connecting mistral.rs (i.e. UQFF/Metal codes) to the Swift frontend
-- `ios_vlm`: Multilingual Swift frontend.
+- `ios_vlm`: Swift/SwiftUI frontend
+
+### Android
+- `kotlin_vlm`: Kotlin/Jetpack Compose frontend with Rust FFI bridge
+  - `app/src/main/java/`: Kotlin source code (MainActivity, theme)
+  - `app/src/testffi/`: Rust FFI code for JNI bindings to mistral.rs
+  - `app/src/main/jniLibs/`: Pre-built native libraries
 
 ## Installation
+
+### iOS
 Installation is designed to work on a Mac (Apple silicon) machine.
 
 0) Install dependencies:
    1) Rust (https://rust-lang.org/tools/install/)
    2) Install XCode developer tools (https://mac.install.guide/commandlinetools/)
-   3) Enable developer mode on your iphone (https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) 
-   
+   3) Enable developer mode on your iphone (https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device)
+
 1) Run the following Terminal commands to install Edge(u)cation:
 
 ```
@@ -21,6 +31,10 @@ cd ..
 ```
 
 2) Then, open `ios_vlm` in XCode and install the app by selecting the build target to be either your iPhone or a simulator.
+
+### Android
+1) Open `kotlin_vlm` in Android Studio
+2) Build and run on an Android device or emulator (arm64-v8a)
 
 **Abstract**:
 
